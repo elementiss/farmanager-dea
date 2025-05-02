@@ -1,0 +1,68 @@
+[py]
+run = set BETTER_EXCEPTIONS=1 && python -X utf8 $file
+pattern=line (%d+)
+format=ruff format --cache-dir C:\Windows\Temp $file
+formatpattern=:(%d+):(%d+):
+
+[pas]
+run=D:\Utils\fpc.cmd $file
+pattern=%((%d+),(%d+)%)
+# https://github.com/quadroid/jcf-pascal-format/
+format=D:\Utils\pascal-format.exe $file
+formatpattern=%((%d+):(%d+)%)
+
+[md]
+run=C:\Far\Profile\Macros\scripts\dea\pandoc_md_to_html_far.cmd $file
+# https://github.com/hukkin/mdformat or prettier
+format=mdformat $file
+
+[json]
+# https://github.com/prettier/prettier
+format=prettier --write --no-color --tab-width 3 $file
+# copy $file $file.bak > nul & prettier
+formatpattern=%((%d+):(%d+)%)
+
+[lua]
+run=C:\Far\luajit.exe $file
+pattern=:(%d+):
+format=stylua.exe --indent-type Spaces --indent-width 3 --call-parentheses NoSingleTable --quote-style AutoPreferDouble --syntax LuaJit $file
+formatpattern=%((%d+):(%d+)
+
+[ahk]
+run="C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut=UTF-8 /CP65001 $file
+pattern=(%d+)
+
+[js]
+run = node.exe $file
+pattern=:(%d+):(%d+)
+# https://github.com/prettier/prettier
+format=prettier --write --no-color --tab-width 3 $file
+formatpattern=%((%d+):(%d+)%)
+
+[ts]
+run=tsc $file --outFile _output.js --strict --target esnext --experimentalDecorators && node.exe _output.js
+pattern=:(%d+):(%d+)
+# https://github.com/prettier/prettier
+format=prettier --write --no-color --tab-width 3 $file
+formatpattern=%((%d+):(%d+)%)
+
+[go]
+run="C:\Program Files\Go\bin\go.exe" run $file
+pattern=:(%d+):(%d+):
+
+[html]
+# https://github.com/prettier/prettier
+format=prettier --write --no-color --tab-width 3 --print-width 120 $file
+formatpattern=%((%d+):(%d+)%)
+
+[css]
+format=prettier --write --no-color --tab-width 3 $file
+formatpattern=%((%d+):(%d+)%)
+
+[scss]
+format=prettier --write --no-color --tab-width 3 $file
+formatpattern=%((%d+):(%d+)%)
+ 
+[yaml]
+format=prettier --write --no-color --tab-width 3 $file
+formatpattern=%((%d+):(%d+)%)
