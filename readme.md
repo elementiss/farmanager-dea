@@ -8,3 +8,12 @@ SaveAndRun is a Lua script for Far Manager that executes commands based on the f
 
 [More...](./SaveAndRun/)
 
+## EditorBackup
+
+Script for Far Manager that creates backups of a file when saving it in the editor.
+The backups are rotated so that the latest copy has the number 1, the second latest copy has the number 2, and so on.
+
+You can set restrictions for which file types to create copies, the maximum number of file copies, and the folder for the copies.
+
+[More...](./EditorBackup/)
+
