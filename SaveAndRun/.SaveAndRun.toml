@@ -3,6 +3,8 @@ run = set BETTER_EXCEPTIONS=1 && python -X utf8 $file
 pattern=line (%d+)
 format=ruff format --cache-dir C:\Windows\Temp $file
 formatpattern=:(%d+):(%d+):
+linting=uvx ruff check $file
+lintingpattern=:(%d+):(%d+):
 
 [pas]
 run=D:\Utils\fpc.cmd $file
