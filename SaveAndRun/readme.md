@@ -61,6 +61,7 @@ pattern = %((%d+),(%d+)%)
 
 - **Shift+Enter**: Saves the file and runs the configured `run` command.
 - **Ctrl+D**: Saves the file and runs the configured `format` command.
+- **Alt+Enter**: Saves the file and runs the configured `linting` command.
 
 ## How It Works
 
