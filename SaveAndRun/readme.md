@@ -11,6 +11,7 @@ SaveAndRun is a Lua script for Far Manager that executes commands based on the f
 - Displays command output (stdout and stderr) in a menu, with error line and column parsing for quick navigation.
 - Saves the current file before executing commands.
 - Supports file formatting with tools like Prettier or ruff, with error handling.
+- Supports linting.
 - Handles output encoding conversion using `iconv.exe` (configurable).
 - Stores output in temporary files for further analysis.
 
