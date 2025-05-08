@@ -116,6 +116,7 @@ The screenshot shows the output menu with numbered errors. Pressing a number (e.
 
 ## Changelog
 
+- **2025-05-08**: Added linting support.
 - **2025-05-02**: Fixed configuration file search for long paths.
 - **2025-04-20**: Initial release.
 
