@@ -4,7 +4,8 @@
 local ICONV = "C:\\Program Files\\Git\\usr\\bin\\iconv.exe"
 local CONFIG = ".SaveAndRun.toml"
 local KEY_RUN = "ShiftEnter"
-local KEY_FMT = "CtrlD"
+local KEY_FORMAT = "CtrlD"
+local KEY_LINTING = "AltEnter"
 local TEMP = win.GetEnv("TEMP") .. "\\"
 local file1 = TEMP .. "sr.stdout.txt"
 local file2 = TEMP .. "sr.stderr.txt"
@@ -68,6 +69,8 @@ local function readConfig(fileName)
    local encoding = ""
    local format = ""
    local formatpattern = ""
+   local linting = ""
+   local lintingformat = ""
 
    if configContent then
       -- Ищем секцию [ext] и ключ run
@@ -95,10 +98,18 @@ local function readConfig(fileName)
             end
          elseif inSection and line:match("^formatpattern%s*=") then
             formatpattern = line:match("^formatpattern%s*=%s*(.-)%s*$")
+         elseif inSection and line:match("^linting%s*=") then
+            local runLnt = line:match("^linting%s*=%s*(.-)%s*$")
+            if runLnt then
+               -- Заменяем $file на имя файла
+               linting = runLnt:gsub("%$file", '"' .. fileName .. '"')
+            end
+         elseif inSection and line:match("^lintingpattern%s*=") then
+            lintingpattern = line:match("^lintingpattern%s*=%s*(.-)%s*$")
          end
       end
    end
-   return command, encoding, pattern, format, formatpattern
+   return command, encoding, pattern, format, formatpattern, linting, lintingformat
 end
 
 local function showResult(lines, pattern)
@@ -203,10 +214,12 @@ local function SaveAndRun(act)
       return
    end
 
-   local command, encoding, pattern, format, formatpattern = readConfig(fileName)
+   local command, encoding, pattern, format, formatpattern, linting, lintingformat = readConfig(fileName)
 
    if act == 1 then
       runCommand(command, encoding, pattern)
+   elseif act == 3 then
+      runCommand(linting, encoding, lintingpattern)
    else
       runFormat(format, formatpattern)
    end
@@ -223,9 +236,19 @@ Macro {
 
 Macro {
    area = "Editor",
-   key = KEY_FMT,
+   key = KEY_FORMAT,
    description = "Save and Run: Format",
    action = function()
       SaveAndRun(2)
    end,
 }
+
+Macro {
+   area = "Editor",
+   key = KEY_LINTING,
+   description = "Save and Run: Linting",
+   action = function()
+      SaveAndRun(3)
+   end,
+}
+
