@@ -38,6 +38,9 @@ The configuration is a TOML file with sections for each file extension. Each sec
 - `encoding`: Source encoding for output conversion to UTF-8 (requires `iconv.exe`).
 - `format`: Command for formatting the file.
 - `formatpattern`: Regular expression for parsing formatting errors.
+- `linting`: Command for linting.
+- `lintingpattern`: Expression for parsing linting errors.
+
 
 #### Example Configuration
 
