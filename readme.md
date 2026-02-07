@@ -1,5 +1,8 @@
 # Lua Scripts for Far Manager
 
+[![Github All Releases](https://img.shields.io/github/downloads/elementiss/farmanager-dea/total.svg)]()
+
+
 [Русская версия README](readme.ru.md)
 
 ## SaveAndRun
