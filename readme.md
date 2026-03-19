@@ -24,4 +24,6 @@ You can set restrictions for which file types to create copies, the maximum numb
 
 Script for Far Manager that hightlights #RRGGBB, #RRGGBBAA, rgb(), rgba() colors in the editor.
 
-![](Highlight css colors/highlight-colors1.png) ![](Highlight css colors/highlight-colors2.png)
+<img src="Highlight%20css%20colors/highlight-colors1.png" width="50%" alt="ex1"> <img src="Highlight%20css%20colors/highlight-colors2.png" width="20%" alt="ex1">
+
+
