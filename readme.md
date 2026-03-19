@@ -28,7 +28,7 @@ Script for Far Manager that hightlights #RRGGBB, #RRGGBBAA, rgb(), rgba() colors
 
 ## Editor Stats
 
-Statistics for selected text and current line in the editor 
+This script counts selected lines, characters, words, and bytes in the editor, displaying statistics for the current selection and line.
 
 <img width="55%" alt="Editor Stats" src="https://github.com/user-attachments/assets/aeafd94d-558c-42f1-a6f8-a9e36e719f3a" />
 
