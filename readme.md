@@ -26,4 +26,10 @@ Script for Far Manager that hightlights #RRGGBB, #RRGGBBAA, rgb(), rgba() colors
 
 <img src="Highlight%20css%20colors/highlight-colors1.png" width="53%" alt="ex1"> <img src="Highlight%20css%20colors/highlight-colors2.png" width="13%" alt="ex1">
 
+## Editor Stats
 
+Statistics for selected text and current line in the editor 
+
+<img width="55%" alt="Editor Stats" src="https://github.com/user-attachments/assets/aeafd94d-558c-42f1-a6f8-a9e36e719f3a" />
+
+`CtrlShiftS`
