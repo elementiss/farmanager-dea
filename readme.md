@@ -20,3 +20,8 @@ You can set restrictions for which file types to create copies, the maximum numb
 
 [More...](./EditorBackup/)
 
+## Highlight css colors
+
+Script for Far Manager that hightlights #RRGGBB, #RRGGBBAA, rgb(), rgba() colors in the editor.
+
+![](Highlight css colors/highlight-colors1.png) ![](Highlight css colors/highlight-colors2.png)
